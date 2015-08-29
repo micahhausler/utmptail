@@ -10,18 +10,18 @@ import (
 // Values for Utmp.Type field
 type Utype int16
 
-/* Type for ut_exit, below */
+// Type for ut_exit, below
 const (
 	Empty        Utype = iota // Record does not contain valid info (formerly known as UT_UNKNOWN on Linux)
-	RunLevel           = iota /* Change in system run-level (see init(8)) */
-	BootTime           = iota /* Time of system boot (in ut_tv) */
-	NewTime            = iota /* Time after system clock change (in ut_tv) */
-	OldTime            = iota /* Time before system clock change (in ut_tv) */
-	InitProcess        = iota /* Process spawned by init(8) */
-	LoginProcess       = iota /* Session leader process for user login */
-	UserProcess        = iota /* Normal process */
-	DeadProcess        = iota /* Terminated process */
-	Accounting         = iota /* Not implemented */
+	RunLevel           = iota // Change in system run-level (see init(8))
+	BootTime           = iota // Time of system boot (in ut_tv)
+	NewTime            = iota // Time after system clock change (in ut_tv)
+	OldTime            = iota // Time before system clock change (in ut_tv)
+	InitProcess        = iota // Process spawned by init(8)
+	LoginProcess       = iota // Session leader process for user login
+	UserProcess        = iota // Normal process
+	DeadProcess        = iota // Terminated process
+	Accounting         = iota // Not implemented
 
 	LineSize = 32
 	NameSize = 32
@@ -50,15 +50,15 @@ func (u Utype) MarshalJSON() ([]byte, error) {
 	case DeadProcess:
 		return json.Marshal("DeadProcess")
 	case Accounting:
-		return json.Marshal("Acounting")
+		return json.Marshal("Accounting")
 	default:
 		return json.Marshal("")
 	}
 }
 
 type exit_status struct {
-	Termination int16 `json:"termination"` /* Process termination status */
-	Exit        int16 `json:"exit"`        /* Process exit status */
+	Termination int16 `json:"termination"` // Process termination status
+	Exit        int16 `json:"exit"`        // Process exit status
 }
 
 type TimeVal struct {

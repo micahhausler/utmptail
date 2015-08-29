@@ -6,7 +6,7 @@
 #
 # To run:
 # $ docker run -v /var/log/wtmp:/var/log/wtmp  micahhausler/utmptail /var/log/wtmp
-# or (for 64bit systems only)
+# or
 # $ tail -F --bytes 384 /var/log/wtmp | docker run -i micahhausler/utmptail
 
 FROM busybox

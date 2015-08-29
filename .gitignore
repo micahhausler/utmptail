@@ -7,6 +7,9 @@
 _obj
 _test
 
+# Coverage
+coverage.out
+
 # Bild artifacts
 /utmptail
 

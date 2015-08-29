@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/micahhausler/utmptail.svg)](https://travis-ci.org/micahhausler/utmptail)
+[![https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](http://godoc.org/github.com/micahhausler/utmptail/)
+
 # utmptail
 `utmptail` reads in a `/var/log/{b,u,w}tmp` file and emit each line as JSON.
 This is useful for sending \*tmp logs to a logging service that parses
@@ -44,8 +47,8 @@ Currenlty this only supports 64 bit systems as 32 bit systems have different str
 
 ## Wishlist
 
-- [ ] Add tests/CI
-- [ ] Add GoDocs
+- [x] Add tests/CI
+- [x] Add GoDocs
 - [ ] Actually be able to follow the specified file, rather than having to pipe in a tail like so
 	
 	```
